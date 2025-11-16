@@ -1,0 +1,17 @@
+services:
+
+  seat:
+    build:
+      context: ./
+      dockerfile: ./docker/seat/Dockerfile
+    container_name: pilot_seat
+    image: pilot_seat
+    # volumes:
+    #   - ./volumes/videos:/root/videos
+    networks:
+      - pilot
+
+networks:
+  pilot:
+      name: pilot
+      driver: bridge
